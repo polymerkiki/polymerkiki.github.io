@@ -12,9 +12,16 @@ st.sidebar.image('klasifikasi-citra-penyakit-batang-tanaman-jagung-menggunakan-v
 st.sidebar.write("Tugas Akhir")
 st.sidebar.write("Achmad Rizky Rino Saputra (190441100090)")
 
-# Load the pre-trained Keras model 
-model_path = 'klasifikasi-citra-penyakit-batang-tanaman-jagung-menggunakan-vgg19/new_model/model_fine_5.keras'
-model = load_model(model_path)
+# Load the pre-trained Keras model
+#model_path = 'klasifikasi-citra-penyakit-batang-tanaman-jagung-menggunakan-vgg19/new_model/model_fine_5.keras'
+#model = load_model(model_path)
+
+import urllib.request            
+classifier_model = 'model_fine_5.keras'
+if not os.path.isfile('model_fine_5.keras'):
+    classifier_model = urllib.request.urlretrieve('https://github.com/polymerkiki/polymerkiki.github.io/blob/streamlit/klasifikasi-citra-penyakit-batang-tanaman-jagung-menggunakan-vgg19/new_model/model_fine_5.keras?raw=true', 'model_fine_5.keras')
+# model = models.load_model(classifier_model, compile=False, custom_objects={'KerasLayer': hub.KerasLayer})
+model = load_model(classifier_model)
 
 # Image preprocessing function
 def preprocess_image(image):
