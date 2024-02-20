@@ -6,6 +6,7 @@ import numpy as np
 from PIL import Image
 from tensorflow.keras.models import load_model
 from PIL import ImageOps
+import os
 
 
 st.sidebar.image('klasifikasi-citra-penyakit-batang-tanaman-jagung-menggunakan-vgg19/logo UTM.png', caption='', use_column_width=True)
