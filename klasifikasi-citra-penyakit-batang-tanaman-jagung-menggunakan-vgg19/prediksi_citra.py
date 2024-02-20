@@ -12,7 +12,7 @@ st.sidebar.image('klasifikasi-citra-penyakit-batang-tanaman-jagung-menggunakan-v
 st.sidebar.write("Tugas Akhir")
 st.sidebar.write("Achmad Rizky Rino Saputra (190441100090)")
 
-# Load the pre-trained Keras model
+# Load the pre-trained Keras model 
 model_path = 'klasifikasi-citra-penyakit-batang-tanaman-jagung-menggunakan-vgg19/new_model/model_fine_5.keras'
 model = load_model(model_path)
 
