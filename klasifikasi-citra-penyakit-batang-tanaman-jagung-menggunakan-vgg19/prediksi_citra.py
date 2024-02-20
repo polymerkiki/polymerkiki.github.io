@@ -8,12 +8,12 @@ from tensorflow.keras.models import load_model
 from PIL import ImageOps
 
 
-st.sidebar.image('./logo UTM.png', caption='', use_column_width=True)
+st.sidebar.image('klasifikasi-citra-penyakit-batang-tanaman-jagung-menggunakan-vgg19/logo UTM.png', caption='', use_column_width=True)
 st.sidebar.write("Tugas Akhir")
 st.sidebar.write("Achmad Rizky Rino Saputra (190441100090)")
 
 # Load the pre-trained Keras model
-model_path = './new_model/model_fine_5.keras'
+model_path = 'klasifikasi-citra-penyakit-batang-tanaman-jagung-menggunakan-vgg19/new_model/model_fine_5.keras'
 model = load_model(model_path)
 
 # Image preprocessing function
@@ -67,7 +67,7 @@ def main():
     else:
         col1, col2, col3 = st.columns(3)
         with col2:
-            image = Image.open('./contoh.jpg')
+            image = Image.open('klasifikasi-citra-penyakit-batang-tanaman-jagung-menggunakan-vgg19/contoh.jpg')
             st.image(image, caption='Contoh Citra', use_column_width=True)
 
         img = np.array(image, dtype="uint8")
