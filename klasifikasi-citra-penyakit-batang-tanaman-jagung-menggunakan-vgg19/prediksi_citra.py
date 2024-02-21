@@ -63,14 +63,17 @@ def main():
         # Display the predictions
         predictions_df = pd.DataFrame(predictions)
         with col1:
-            st.subheader('Anthracnose')
-            st.subheader(format(predictions_df.iloc[0][0], ".2%"))
+            st.write('Anthracnose', format(predictions_df.iloc[0][0], ".2%"))
+            st.write('Fusarium', format(predictions_df.iloc[0][1], ".2%"))
+            st.write('Normal', format(predictions_df.iloc[0][2], ".2%"))
         with col2:
-            st.subheader('Fusarium')
-            st.subheader(format(predictions_df.iloc[0][1], ".2%"))
-        with col3:
-            st.subheader('Normal')
-            st.subheader(format(predictions_df.iloc[0][2], ".2%"))
+            class_probabilities = [predictions_df.iloc[0][0], predictions_df.iloc[0][1], predictions_df.iloc[0][2]]
+            class_names = ["Anthracnose", "Fusarium", "Normal"]
+            predicted_class_index = np.argmax(class_probabilities)
+            predicted_class_name = class_names[predicted_class_index]
+
+            st.subheader('Prediksi:')
+            st.subheader(predicted_class_name)
 
     else:
         col1, col2, col3 = st.columns(3)
